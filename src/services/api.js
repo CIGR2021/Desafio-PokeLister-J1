@@ -12,10 +12,10 @@ export const getAll = async() => {
   }
 };
 
-export const getByName = async(name) => {
-  try {
-    return await axios.get(`${API_URL}{name}`);
-  } catch (err) {
-    console.log(err)
-  }
-};
+// export const getByName = async(name) => {
+//   try {
+//     return await axios.get(`${API_URL}{name}`);
+//   } catch (err) {
+//     console.log(err)
+//   }
+// };
