@@ -38,7 +38,10 @@ function CardView(props) {
         </li>
         <section>
           <h2>Abilities</h2>
-          {!pokemon && pokemon.habilidades.map((item) => console.log(item.ability))}
+          {!pokemon
+            || !pokemon.habilidades
+            || pokemon.habilidades
+              .map((item) => (<li key={item.ability.name}>{item.ability.name}</li>))}
         </section>
       </section>
     </main>
