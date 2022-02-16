@@ -4,12 +4,13 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css'
-import Card from './components/Card';
+import CardList from './components/CardList';
 
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={ Card } />
+      <Route exact path="/" component={ CardList } />
+      {/* <Route exact path="/pokemon/:name" component={ View } /> */}
     </Switch>
   );
 }
