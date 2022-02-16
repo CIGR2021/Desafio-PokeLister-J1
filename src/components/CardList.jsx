@@ -1,9 +1,18 @@
-import React, { useContext } from "react";
-import Context from "../context/Context";
+import React, { useEffect, useState } from "react";
+import { getAll } from "../services/api";
 import Card from './Card';
 
 function CardList() {
-  const { pokemons } = useContext(Context);
+  const [pokemons, setPokemons] = useState([])
+
+  const getAllPokemons = async() => {
+    const data = await getAll()
+    setPokemons(data)
+  }
+
+  useEffect(() => {
+    getAllPokemons();
+  }, [])
 
   return (
     <main>
