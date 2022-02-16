@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Card() {
+function Card(props) {
+  const { pokemon } = props
+
   return (
     <main className='card App App-header'>
-      Teste
+      <ul>
+        <Link to="#"><li>{pokemon.name}</li></Link>
+      </ul>
     </main>
   );
 }
