@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getAll } from "../services/api";
 import Card from './Card';
+import Pagination from "./Pagination";
 
 function CardList() {
   const [pokemons, setPokemons] = useState([])
-
+  const [offset, setOffset] = useState(0)
+  const OFFSET = offset;
+  const LIMIT = 24;
   const getAllPokemons = async() => {
-    const data = await getAll()
+    const data = await getAll(OFFSET, LIMIT)
     setPokemons(data)
   }
 
@@ -21,6 +24,7 @@ function CardList() {
           <Card key={ pokemon.name } pokemon={ pokemon } />
         ))}
       </section>
+      <Pagination />
     </main>
   )
 }
