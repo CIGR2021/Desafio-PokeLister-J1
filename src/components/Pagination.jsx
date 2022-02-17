@@ -10,7 +10,9 @@ function Pagination({
 }) {
   return (
     <ul className="pagination">
-        <FormControl className="pagination">
+        <FormControl
+          sx={{ width: 150, textAlign: 'center' }}
+          className="pagination">
           <InputLabel id="Quantidade por página">Quantidade por página</InputLabel>
           <Select
             labelId="Quantidade por página"
