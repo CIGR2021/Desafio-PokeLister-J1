@@ -21,9 +21,8 @@ function Pagination({
             label="Quantidade por página"
             onChange={({ target }) => setItensPerPage(Number(target.value))}
           >
-            <MenuItem value={6}>6</MenuItem>
-            <MenuItem value={12}>12</MenuItem>
-            <MenuItem value={18}>18</MenuItem>
+            <MenuItem value={8}>8</MenuItem>
+            <MenuItem value={16}>16</MenuItem>
             <MenuItem value={24}>24</MenuItem>
           </Select>
         </FormControl>
