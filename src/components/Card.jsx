@@ -1,3 +1,5 @@
+import { Card as CardUi, CardActionArea, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getByName } from '../services/api';
@@ -22,20 +24,40 @@ function Card(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const preventDefault = (event) => event.preventDefault();
+
   return (
-    <main className='card App App-header'>
-      <ul>
-        <Link to={`/pokemon/${pokemon.name}`}>
-          <img
-            src={`${pokemons.image}`}
-            alt={pokemons.nome}
-            />
-          <li>
-            {name}
-          </li>
-        </Link>
-      </ul>
-    </main>
+    <Box
+      onClick={preventDefault}
+    >
+      <Container
+        className="card"
+        sx={{
+          display: 'flex',
+          maxWidth: 480,
+          textAlign: 'center',
+          marginTop: 2
+        }}
+      >
+        <CardUi>
+          <CardActionArea>
+            <Link to={`/pokemon/${pokemon.name}`}>
+              <CardMedia
+                  component="img"
+                  height="150"
+                  image={`${pokemons.image}`}
+                  alt={name}
+              />
+              <CardContent>
+                <Typography>
+                  <h1>{name}</h1>
+                </Typography>
+              </CardContent>
+            </Link>
+          </CardActionArea>
+        </CardUi>
+      </Container>
+    </Box>
   );
 }
 
